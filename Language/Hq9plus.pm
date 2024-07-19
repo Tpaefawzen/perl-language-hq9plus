@@ -9,7 +9,7 @@ package Language::Hq9plus;
 
 use strict; use warnings;
 
-our $VERSION = '1.0.0';
+our $VERSION = '1.00';
 
 sub new($) {
 	my ($cls, $src) = @_;
@@ -120,7 +120,7 @@ Accumulator. Default: 0. An integer.
 
 =item new($src)
 
-Constructor. Load a program. $src is HQ9+ program source as a string.
+Static method. Constructor. Load a program. $src is HQ9+ program source as a string.
 
 =item run()
 
@@ -133,8 +133,12 @@ Use standard output.
 
 https://esolangs.org/wiki/HQ9+
 
-=head1 AUTHOR
+=head1 AUTHOR AND COPYRIGHT
 
-Tpaefawzen
+Copyright (C) 2024 Tpaefawzen
+
+Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
+# 
+# THE SOFTWARE IS PROVIDED “AS IS” AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 =cut

@@ -1,0 +1,8 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use Language::Hq9plus;
+
+my $source = join '', <>;
+Language::Hq9plus->new($source)->run();

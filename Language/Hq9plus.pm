@@ -36,10 +36,6 @@ sub run {
 	}
 }
 
-sub tldr($) {
-	Hq9plus->new($_[0])->run();	
-}
-
 sub __hello {
 	print "Hello, world!\n";
 }
@@ -51,23 +47,26 @@ sub __quine {
 
 my $__99bb;
 BEGIN {
-	$__99bb = "";
 	sub b {
 		$_ = shift;
 		sprintf "%s bottle%s of beer", ($_ || "no more"), ("s" x ($_ != 1));
 	}
 
-	for ( my $i = 99; $i >= 0; $i-- ) {
-		my $b = b $i;
-		my $B = $b; $B =~ s/^n/N/;
-		$__99bb .= sprintf "%s on the wall, %s.\n", $B, $b;
+	if ( not defined $__99bb ) {
+		for ( my $i = 99; $i >= 0; $i-- ) {
+			my $b = b $i;
+			my $B = $b; $B =~ s/^n/N/;
+			$__99bb .= sprintf "%s on the wall, %s.\n", $B, $b;
 
-		$B = "Go to the store and buy some more";
-		$B = "Take one down and pass it around" if $i;
-		$b = b (($i-1)%100);
+			$B = "Go to the store and buy some more";
+			$B = "Take one down and pass it around" if $i;
+			$b = b (($i-1)%100);
 
-		$__99bb .= sprintf "%s, %s on the wall.\n", $B, $b;
-		$__99bb .= "\n" if $i;
+			$__99bb .= sprintf "%s, %s on the wall.\n", $B, $b;
+			$__99bb .= "\n" if $i;
+		}
+
+		undef &b;
 	}
 }
 

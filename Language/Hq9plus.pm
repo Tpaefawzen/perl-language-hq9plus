@@ -84,6 +84,8 @@ sub __increment {
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Language::Hq9plus - HQ9+ Implementation
@@ -99,6 +101,7 @@ Language::Hq9plus - HQ9+ Implementation
 =head1 DESCRIPTION
 
 HQ9+ implementation. Object-oriented.
+Case-sensitive.
 
 =head2 MEMBERS
 

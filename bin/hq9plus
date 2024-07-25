@@ -2,7 +2,81 @@
 
 use strict;
 use warnings;
-use Language::Hq9plus;
 
-my $source = join '', <>;
-Language::Hq9plus->new($source)->run();
+use Language::Hq9plus;
+use Getopt::Std;
+
+our $VERSION = $Language::Hq9plus::VERSION;
+
+$0 =~ s!^.*/!!;
+
+# == Parse args. ==
+my %opts;
+$Getopt::Std::STANDARD_HELP_VERSION = 1; # get out when --help or --version.
+
+getopts("aA:", \%opts) or exit 1;
+
+sub HELP_MESSAGE {
+	my ($h, $pkgname, $pkgver, $switches) = @_;
+	print $h "Usage: $0 [-a] [-A VALUE] [FILE]\n";
+}
+
+sub VERSION_MESSAGE {
+	my ($h, $pkgname, $pkgver, $switches) = @_;
+	print $h "$0 $VERSION\n";
+}
+
+## Is that an accepted option value?
+my $accum;
+if ( $opts{A} ) {
+	$accum = 0+$opts{A}; ## XXX: may fail when -A str not -A 123
+}
+
+# == main ==
+my $source = join '', <>; ## XXX: rough handling when file could not be read
+my $vm = Language::Hq9plus->new($source) or die; # unlikely die.
+$vm->{accum} = $accum if defined $accum;
+$vm->run();
+
+# == finally ==
+if ( $opts{a} ) {
+	$accum ||= 0;
+	print STDERR "$0: accumumulator: $accum to $vm->{accum}\n";
+}
+
+exit 0;
+
+=pod
+
+=head1 NAME
+
+hq9plus - HQ9+ interpreter.
+
+=head1 SYNOPSIS
+
+    hq9plus [-a] [-A VALUE] [FILE]
+
+=head1 DESCRIPTION
+
+HQ9+ interpreter. Given a FILE (or standard input if none given) as a HQ9+
+program, run the program.
+
+=head1 OPTIONS
+
+=over
+
+=item -a
+
+Report accumulator value after HQ9+ execution is done, to standard error.
+
+=item -A VALUE
+
+Initialize accumulator as given VALUE (expected to be an integer).
+
+=back
+
+=head1 SEE ALSO
+
+Language::Hq9plus
+
+=cut

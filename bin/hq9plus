@@ -58,25 +58,29 @@ hq9plus - HQ9+ interpreter.
 
 =head1 DESCRIPTION
 
-HQ9+ interpreter. Given a FILE (or standard input if none given) as a HQ9+
+HQ9+ interpreter. Given a I<FILE> (or standard input if none given) as a HQ9+
 program, run the program.
 
 =head1 OPTIONS
 
 =over
 
-=item -a
+=item B<-a>
 
 Report accumulator value after HQ9+ execution is done, to standard error.
 
-=item -A VALUE
+=item B<-A> I<VALUE>
 
-Initialize accumulator as given VALUE (expected to be an integer).
+Initialize accumulator as given I<VALUE> (expected to be an integer).
 
 =back
 
 =head1 SEE ALSO
 
-Language::Hq9plus
+L<Language::Hq9plus>
+
+=head1 AUTHOR
+
+Tpaefawzen
 
 =cut

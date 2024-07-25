@@ -100,7 +100,7 @@ Language::Hq9plus - HQ9+ Implementation
 =head1 DESCRIPTION
 
 HQ9+ implementation. Object-oriented.
-Case-sensitive.
+Case-sensitive; only "H", "Q", "9" and "+" are commands.
 
 =head2 MEMBERS
 
@@ -120,11 +120,11 @@ Accumulator. Default: 0. An integer.
 
 =over
 
-=item new($src)
+=item C<new($src)>
 
 Static method. Constructor. Load a program. $src is HQ9+ program source as a string.
 
-=item run()
+=item C<run()>
 
 Run the loaded HQ9+ program. Returns nothing.
 Use standard output.
@@ -133,14 +133,14 @@ Use standard output.
 
 =head1 SEE ALSO
 
-https://esolangs.org/wiki/HQ9+
+L<https://esolangs.org/wiki/HQ9+>
 
 =head1 AUTHOR AND COPYRIGHT
 
 Copyright (C) 2024 Tpaefawzen
 
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
-# 
-# THE SOFTWARE IS PROVIDED “AS IS” AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+THE SOFTWARE IS PROVIDED “AS IS” AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 =cut

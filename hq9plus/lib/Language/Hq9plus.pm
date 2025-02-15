@@ -9,9 +9,9 @@ package Language::Hq9plus;
 
 use strict; use warnings;
 
-our $VERSION = '1.00';
+our $VERSION = v0.1.0;
 
-sub new($) {
+sub new {
 	my ($cls, $src) = @_;
 	my $self = {
 		src => $src,
@@ -54,13 +54,13 @@ BEGIN {
 
 	if ( not defined $__99bb ) {
 		for ( my $i = 99; $i >= 0; $i-- ) {
-			my $b = b $i;
+			my $b = b($i);
 			my $B = $b; $B =~ s/^n/N/;
 			$__99bb .= sprintf "%s on the wall, %s.\n", $B, $b;
 
 			$B = "Go to the store and buy some more";
 			$B = "Take one down and pass it around" if $i;
-			$b = b (($i-1)%100);
+			$b = b(($i-1)%100);
 
 			$__99bb .= sprintf "%s, %s on the wall.\n", $B, $b;
 			$__99bb .= "\n" if $i;
@@ -134,6 +134,10 @@ Use standard output.
 =head1 SEE ALSO
 
 L<https://esolangs.org/wiki/HQ9+>
+
+=head1 AUTHOR
+
+Tpaefawzen
 
 =head1 AUTHOR AND COPYRIGHT
 

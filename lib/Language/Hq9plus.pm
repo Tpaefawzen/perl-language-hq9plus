@@ -9,7 +9,7 @@ package Language::Hq9plus;
 
 use strict; use warnings;
 
-our $VERSION = v0.1.0;
+use version; our $VERSION = version->declare(v0.1.0);
 
 sub new {
 	my ($cls, $src) = @_;
